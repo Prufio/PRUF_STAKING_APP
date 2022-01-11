@@ -1,0 +1,1641 @@
+
+/* html {
+  overflow-y:hidden !important;
+} */
+body {
+    background: linear-gradient(0deg, rgba(0, 85, 131, 0.795), #002a40) !important;
+    overflow-x: hidden !important;
+}
+.CopyrightBackground {
+    background-image: url('../img/Sidebar Backgrounds/TracesWB.jpg') !important;
+    padding: 15px;
+}
+
+/* body {
+    background: linear-gradient(0deg, rgba(0, 83, 128, 0.514), #015f923b) !important;
+} */
+
+/* body {
+    background: linear-gradient(180deg, rgba(0, 83, 128, 0.514), #015f923b) !important;
+} */
+
+/* body {
+    background: linear-gradient(0deg, rgba(0, 83, 128, 0.616), #015f923b) !important;
+} */
+
+/* body {
+    background: linear-gradient(180deg, rgba(0, 83, 128, 0.596), #015f923b) !important;
+} */
+
+
+.assetImage {
+    width: 300px !important;
+    height: 300px !important;
+    object-fit:contain !important;
+    /* transition: "all 300ms cubic-bezier(0.34, 1.61, 0.7, 1)" */
+}
+
+.squash {
+  height: 25px !important;
+}
+
+.bold_hr {
+  border-top: 2px solid;
+}
+
+.medium_hr {
+  border-top: 1px solid;
+}
+
+.bold_h4 {
+  font-weight: bold;
+}
+
+.assetImage2 {
+    /* max-width: 1000px;
+    max-height: 1000px; */
+    max-width: 300px !important;
+    max-height: 300px !important;
+}
+
+.editDescriptionField {
+  white-space: pre-wrap;
+}
+
+.DBGradient {
+    background: linear-gradient(0deg, #002a40, #01476d) !important;
+    object-fit: cover !important;
+}
+
+.DBGradient:active {
+  background-color: #017ec0 !important;
+}
+
+.MDBGradient {
+    background: linear-gradient(0deg, #005480, #015f92) !important;
+    object-fit: cover !important;
+}
+
+.MDBGradient:active {
+  background-color: #002a40 !important;
+}
+
+.MLBGradient {
+    background: linear-gradient(0deg, #017ec0, #02a1f7) !important;
+    /* object-fit: cover !important; */
+}
+
+.MLBGradient:active {
+  background-color: #002a40 !important;
+}
+
+.MLBGradientSm {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  padding: 8px !important;
+  background: linear-gradient(0deg, #017ec0, #02a1f7) !important;
+}
+
+.MLBGradientSm:active {
+  background-color: #002a40 !important;
+}
+
+.transparentButtonSmall {
+  color: black !important;
+  background: transparent !important;
+  padding: none !important;
+  font-size: 12px !important;
+}
+
+.transparentButton {
+  color: black !important;
+    background: transparent !important;
+    /* object-fit: cover !important; */
+}
+
+.flexRowButtons {
+  background-color: #4d47f74b;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px 5px 5px;
+  padding-right: 9px;
+  border: 1px solid #4d47f7b0 !important;
+  flex-direction: row;
+  max-height: 40px !important;
+}
+
+.flexRowMMButtons {
+  background-color: #ffffff3f;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px 5px 5px;
+  padding-right: 9px;
+  border: 1px solid #ffffff3f !important;
+  flex-direction: row;
+  max-height: 40px !important;
+}
+
+.flexRowWithGap {
+  display: inline-flex;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flexRowMaxGap {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.MLBGradientSubmit {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+
+.MLBGradientRefresh {
+  color: #017ec0;
+  cursor: pointer;
+  margin-top: 10px;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition:         transform .5s ease-in-out;
+}
+
+.MLBGradientRefresh:hover {
+  color: #017ec0;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.refresh {
+  color: #017ec0;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition:         transform .5s ease-in-out;
+}
+
+.refresh:hover {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.inlineFlex {
+  display: inline-flex;
+}
+
+.info {
+  display: inline-flex;
+  color: #017ec0;
+  cursor: pointer;
+}
+
+.info:hover {
+  color: #0168a0;
+}
+
+.pendingBal {
+  color: black;
+  margin-top: -0px;
+}
+
+.pendingBal:hover {
+  cursor:auto !important;
+}
+
+.lightBlue {
+  color: #017ec0;
+}
+
+.lightBlue:hover {
+  color: #0168a0;
+}
+
+.links {
+  color: #1b1b1b;
+}
+
+.links:hover {
+  color: #0168a0;
+}
+.links:selected {
+  color: #0168a0;
+}
+
+.dashboardHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboardFooter {
+  background-color: rgba(255, 255, 255, 0.397) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  padding: 10px;
+}
+
+.dashboardFooterPage {
+  display: flex !important;
+  padding-left:20px;
+}
+
+/* .submitChanges {
+    background: linear-gradient(0deg, #01b13c, #01e04c) !important;
+    object-fit: cover !important;
+    width: 10rem;
+} */
+
+.advancedJSONButton {
+  background: linear-gradient(0deg, #017ec0, #02a1f7) !important;
+  object-fit: cover !important;
+  width: 200px;
+}
+
+.LBGradient {
+    background: linear-gradient(0deg, #00a8ff, #00c3ff) !important;
+    object-fit: cover !important;
+}
+
+.functionSelectorIcon {
+  left: -25px !important;
+  bottom: -2px !important;
+    position: absolute !important;
+}
+.functionSelectorText {
+  left: 25px !important;
+  /* bottom: -2px !important; */
+    /* position: absolute !important; */
+}
+
+.functionSelectorAD {
+    top: -60px !important;
+    right: -10px !important;
+    width: 100px;
+}
+
+.Icon {
+    width: 55px;
+    height: 55px;
+}
+
+.iconMini {
+    width: 35px;
+    height: 35px;
+}
+
+.iconMini:hover {
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.footerIcon {
+  cursor: pointer;
+  margin-left: 15px;
+  color: black;
+    width: 30px;
+    height: 30px;
+}
+
+.IconFaucet {
+    width: 35px;
+    height: 35px;
+}
+
+.inlineDelete {
+  display: flex;
+  flex-direction: row;
+}
+
+.headerIconBack {
+    cursor: pointer;
+    float: left;
+    padding: 15px;
+    margin-top: -20px;
+    margin-right: 15px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #003c5c, #005380);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(0, 172, 193,.4);
+}
+
+/* .makeStyles-appBar-79 {
+    background: #002a40 !important;
+    border-radius: 0px !important;
+} */
+
+.makeStyles-title-82 {
+    color: white !important;
+}
+
+.makeStyles-underline-162:after {
+    border-color: #00a8ff !important;
+}
+
+.makeStyles-title-733 {
+    color: white !important;
+}
+
+.exitAsset {
+    rotate: 180deg !important;
+    top: -130px !important;
+}
+
+  .loading:after{
+      content: '  .' !important;
+      animation: dots 0.5s steps(5, end) infinite !important;
+    }
+
+    .qrReader {
+        max-width: 500px;
+    }
+    
+    .Sidebar-blue-50, .Sidebar-blue-50:hover, .Sidebar-blue-50:focus{
+        background: #00a8ff !important;
+    }
+
+
+    /* .lds-facebook {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+      .lds-facebook div {
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        width: 16px;
+        background: rgb(0, 0, 0);
+        animation: lds-facebook 0.8s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+      }
+      .lds-facebook div:nth-child(1) {
+        left: 8px;
+        animation-delay: -0.24s;
+      }
+      .lds-facebook div:nth-child(2) {
+        left: 32px;
+        animation-delay: -0.12s;
+      }
+      .lds-facebook div:nth-child(3) {
+        left: 56px;
+        animation-delay: 0;
+      }
+      @keyframes lds-facebook {
+        0% {
+          top: 12px;
+          height: 24px;
+        }
+        50%, 100% {
+          top: 36px;
+          height: 12px;
+        }
+      }
+
+      .lds-facebookRR {
+          display: inline-block;
+          position: relative;
+          width: 20px;
+          height: 20px;
+          top: -30px
+        }
+        .lds-facebookRR div {
+          display: inline-block;
+          position: absolute;
+          left: 8px;
+          width: 16px;
+          background: rgb(0, 0, 0);
+          animation: lds-facebook 0.8s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+        }
+        .lds-facebookRR div:nth-child(1) {
+          left: 8px;
+          animation-delay: -0.24s;
+        }
+        .lds-facebookRR div:nth-child(2) {
+          left: 32px;
+          animation-delay: -0.12s;
+        }
+        .lds-facebookRR div:nth-child(3) {
+          left: 56px;
+          animation-delay: 0;
+        }
+        @keyframes lds-facebookRR {
+          0% {
+            top: 12px;
+            height: 24px;
+          }
+          50%, 100% {
+            top: 36px;
+            height: 12px;
+          }
+        } */
+
+        .lds-ellipsisCard {
+          display: inline-block;
+          position: relative;
+          width: 55px;
+          height: 16px;
+          bottom: 27px;
+        }
+        .lds-ellipsisCard div {
+          position: absolute;
+          top: 33px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgb(0, 0, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsisCard div:nth-child(1) {
+          left: 8px;
+          animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsisCard div:nth-child(2) {
+          left: 8px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsisCard div:nth-child(3) {
+          left: 32px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsisCard div:nth-child(4) {
+          left: 56px;
+          animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        .lds-ellipsis {
+          display: inline-block;
+          position: relative;
+          width: 55px;
+          height: 55px;
+          bottom: -5.5px;
+        }
+        .lds-ellipsis div {
+          position: absolute;
+          top: 33px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgb(0, 0, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsis div:nth-child(1) {
+          left: 8px;
+          animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(2) {
+          left: 8px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(3) {
+          left: 32px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(4) {
+          left: 56px;
+          animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        @keyframes lds-ellipsis3 {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0);
+          }
+        }
+        @keyframes lds-ellipsis2 {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(24px, 0);
+          }
+        }
+        
+
+
+        .lds-ellipsisIF {
+          display: inline-block;
+          position: relative;
+          width: 55px;
+          height: 55px;
+          bottom: -15px;
+        }
+        .lds-ellipsisIF div {
+          position: absolute;
+          top: 33px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgb(0, 0, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsisIF div:nth-child(1) {
+          left: 8px;
+          animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsisIF div:nth-child(2) {
+          left: 8px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsisIF div:nth-child(3) {
+          left: 32px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsisIF div:nth-child(4) {
+          left: 56px;
+          animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        @keyframes lds-ellipsis3 {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0);
+          }
+        }
+        @keyframes lds-ellipsis2 {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(24px, 0);
+          }
+        }
+
+      
+
+
+      .back {
+        /* background: linear-gradient(0deg, #017ec0, #02a1f7) !important; */
+        /* background-color: transparent !important; */
+        /* color: black !important; */
+        
+        object-fit: cover !important;
+        bottom: -60px;
+        right: -10px;
+      }
+      .settings {
+        background: linear-gradient(0deg, #b4b3b3, #949494) !important;
+        object-fit: cover !important;
+        /* bottom: -120px; */
+        right: 33px;
+      }
+
+      .fixed-plugin .badge-darkBlue {
+        background-color: #002a40 !important;
+      }
+
+      .input {
+        /* top: 105px !important; */
+        right: -10px !important;
+        /* position: absolute !important; */
+      }
+
+      .imageInput {
+        width: 0px !important;
+        height: 0px !important;
+      }
+      .inputDescription {
+        top: 200px !important;
+        left: 100px !important;
+        position: absolute !important;
+      }
+
+
+      
+.assetImageSelectorButton {
+  border: 0px transparent; 
+  background-color: transparent; 
+  object-fit: cover !important;
+  border: #002a40;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: 4px;
+}
+
+.highZPopper {
+  z-index:999 !important;
+}
+
+.udButton {
+  cursor: pointer;
+  margin-right: 4px;
+  padding-right: 5px;
+  max-height: 34px !important;
+  max-width: 34px !important;
+}
+
+.mmButton {
+  cursor: pointer;
+  margin-right: 4px;
+  padding-right: 5px;
+  max-height: 37px !important;
+  max-width: 37px !important;
+}
+
+.assetImageSelectorButton:Hover {
+  background-color: rgb(0, 168, 255, 0.25) ;
+  position:relative;
+  top:-1px;
+  left:1px;
+  height:auto;
+  z-index:999;
+  /* border-style: dashed; */
+  border-width: 1px;
+}
+
+.assetImageSelectorButtonMobile {
+  border: 0px transparent; 
+  background-color: transparent; 
+  object-fit: cover;
+}
+
+.imageSelector {
+  display: flex;
+  width: flex;
+  height: flex;
+  max-width: 560px;
+  overflow-x: auto;
+  border: #002a409a;
+  border-style: solid;
+  border-radius: 5px 5px 5px 5px;
+  padding: 1.5px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(2, 43, 82, 0.4);
+}
+
+.imageSelectorPlus {
+  display: flex;
+  width: 25px;
+  height: 80px;
+  background-color: #888888ce;
+  border-radius: 0px 6px 6px 0px;
+  z-index: 1000;
+  position: absolute;
+  margin-top: 2.5px;
+  margin-left: -2px;
+  align-items: center;
+}
+/* 
+.imagePlus {
+  margin
+} */
+
+.imageSelectorImage {
+  width: 100px;
+  height: 80px;
+  z-index: 2000;
+  object-fit: cover;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #017ec0 !important;
+}
+
+.URL {
+  display: flex;
+  flex-direction: row !important;
+}
+.deleteURL {
+margin-top: 0px;
+}
+.deleteURL:hover {
+cursor:pointer;
+}
+
+.printForm {
+  display: flex;
+  width: 800px ;
+  height: 190px;
+  background-color: #002a40;
+  border-radius: 7.5px;
+  margin-top: 15px;
+  margin-left: 7.5px;
+}
+
+.printFormContent {
+  display: flex;
+  width: 595px;
+  height: 160px;
+  background-color: #028ed4;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+  opacity: 0.9;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+}
+    
+.printQR{
+  display: flex;
+  margin-left: 12.5px;
+  margin-top: 12.5px;
+}
+    
+.printQR2{
+  display: flex;
+  margin-left: 440px;
+  margin-top: -10px;
+  position: absolute;
+  z-index: 999;
+}
+
+/* .printImageForm {
+  justify-content: flex-start;
+  display: flex;
+  width: 23px;
+  height: 23px;
+  object-fit: cover;
+  z-index: 5;
+} */
+
+.printImageBackgroundForm {
+  margin-top: -15px;
+  margin-left: 5px;
+  justify-content: flex-start;
+  display: flex;
+  width: 430px;
+  height: 150px;
+  object-fit: cover;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.2;
+
+}
+
+.cardIdxPrint {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: -5px;
+  color: white;
+  z-index: 999;
+}
+      
+.cardNamePrint {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  z-index: 999;
+}
+
+.cardAcPrint {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 65px;
+  color: white;
+  z-index: 999;
+}
+
+.cardDate {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 172px;
+  margin-left: 500px;
+  color: white;
+  z-index: 999;
+  position: absolute;
+}
+
+.cardHref {
+  font-size: 8px;
+  font-weight: bold;
+  margin-top: 172px;
+  margin-left: 60px;
+  color: white;
+  z-index: 999;
+  position: absolute;
+}
+
+.printButton {
+  color: black;
+}
+
+.printButton:hover {
+  cursor: pointer;
+}
+
+.QRScanner {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.QRScanner:hover {
+  cursor: pointer;
+  color: rgb(141, 129, 129);
+}
+
+.spanSmallText { 
+  font-size: 12px;
+  font-weight: medium;
+}
+
+.spanSmallTextSelect { 
+  font-size: 12px;
+  font-weight: medium;
+  color: #00a8ff;
+}
+
+.spanSmallTextSelect:hover {
+  cursor: pointer;
+  color: #01476d;
+}
+
+.addressTextAndroid{
+  border: none !important;
+  background-color: transparent !important;
+  font-size: 15px;
+  margin-top: 0px !important;
+  color: white;
+}
+
+.addressTextAndroid:hover {
+  cursor:pointer;
+  color: white;
+}
+
+.addressTextBlackAndroid {
+  border: none !important;
+  background-color: transparent !important;
+  font-size: 15px;
+  top: -15px !important;
+  color: rgb(0, 0, 0);
+}
+
+.addressTextBlackAndroid:hover {
+  cursor:pointer;
+  color: rgb(78, 78, 78);
+}
+
+.addressText {
+  border: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 16px;
+  top: 25px !important;
+  left: 75px !important;
+  color: white;
+  position: absolute;
+}
+
+.addressText:hover {
+  cursor:pointer;
+  color: white;
+}
+
+.addressTextBlack {
+  border: none !important;
+  background-color: transparent !important;
+  font-size: 16px;
+  top: 25px !important;
+  left: 75px !important;
+  color: rgb(0, 0, 0);
+  position: absolute;
+}
+
+.addressTextBlack:hover {
+  cursor:pointer;
+  color: rgb(78, 78, 78);
+}
+
+.homeCardText {
+  background-color: transparent !important;
+  border: none !important;
+  color: rgb(0, 0, 0);
+}
+
+
+.homeCardText:hover {
+  color: rgb(78, 78, 78);
+  cursor: pointer;
+}
+
+.IDText {
+  color: black !important;
+  padding: none !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.IDText:hover {
+  cursor:pointer;
+  color: rgb(138, 138, 138) !important;
+}
+
+.addressIconButton {
+  /* float: left; */
+  width: 34px !important;
+  height: 34px !important;
+  z-index: 5;
+  /* overflow: hidden; */
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 300ms linear;
+  margin-left: 23px;
+  margin-right: 11px;
+  border-radius: 50%;
+  margin-top: 18px;
+  border: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 16px;
+  /* top: 25px !important; */
+  /* left: 75px !important; */
+  /* color: white; */
+  /* position: absolute; */
+}
+
+.addressIconButton:hover {
+  cursor: pointer;
+}
+
+.addressIcon {
+  /* float: left; */
+  width: 34px !important;
+  height: 34px !important;
+  z-index: 5;
+  /* overflow: hidden; */
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 300ms linear;
+  margin-left: 23px;
+  margin-right: 11px;
+  border-radius: 50%;
+  margin-top: 18px;
+}
+
+.addressIconMobile {
+  width: 34px !important;
+  height: 34px !important;
+  z-index: 10;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 300ms linear;
+  margin-left: -16px;
+  border-radius: 50%;
+}
+
+.addressIconAndroid {
+  width: 34px !important;
+  height: 34px !important;
+  z-index: 5;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 300ms linear;
+  margin-left: -7px;
+  /* margin-left: 23px; */
+  /* margin-right: 11px; */
+  border-radius: 50%;
+  /* margin-top: 18px; */
+}
+
+.addressIconUp {
+  float: left;
+  width: 34px;
+  height: 34px;
+  z-index: 5;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 300ms linear;
+  margin-left: 23px;
+  margin-right: 11px;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+.addressIconUpAndroid {
+  float: left;
+  width: 34px;
+  height: 34px;
+  z-index: 5;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 300ms linear;
+  margin-left: 23px;
+  margin-right: 11px;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+.bump {
+  margin-left: 15px;
+  margin-top: -20px;
+}
+
+.dashboardAssetImage {
+  object-fit: cover !important;
+  padding: none !important;
+  width: fit-content !important;
+}
+
+.fixedPlugin{
+  font-size: 40px !important;
+  color: rgb(241, 241, 241);
+}
+
+.fixedPlugin:hover{
+  cursor: pointer;
+  color: rgb(233, 233, 233);
+}
+
+.lds-default {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  /* padding: 100px; */
+}
+.lds-default div {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  animation: lds-default 1.2s linear infinite;
+}
+.lds-default div:nth-child(1) {
+  animation-delay: 0s;
+  top: 37px;
+  left: 66px;
+}
+.lds-default div:nth-child(2) {
+  animation-delay: -0.1s;
+  top: 22px;
+  left: 62px;
+}
+.lds-default div:nth-child(3) {
+  animation-delay: -0.2s;
+  top: 11px;
+  left: 52px;
+}
+.lds-default div:nth-child(4) {
+  animation-delay: -0.3s;
+  top: 7px;
+  left: 37px;
+}
+.lds-default div:nth-child(5) {
+  animation-delay: -0.4s;
+  top: 11px;
+  left: 22px;
+}
+.lds-default div:nth-child(6) {
+  animation-delay: -0.5s;
+  top: 22px;
+  left: 11px;
+}
+.lds-default div:nth-child(7) {
+  animation-delay: -0.6s;
+  top: 37px;
+  left: 7px;
+}
+.lds-default div:nth-child(8) {
+  animation-delay: -0.7s;
+  top: 52px;
+  left: 11px;
+}
+.lds-default div:nth-child(9) {
+  animation-delay: -0.8s;
+  top: 62px;
+  left: 22px;
+}
+.lds-default div:nth-child(10) {
+  animation-delay: -0.9s;
+  top: 66px;
+  left: 37px;
+}
+.lds-default div:nth-child(11) {
+  animation-delay: -1s;
+  top: 62px;
+  left: 52px;
+}
+.lds-default div:nth-child(12) {
+  animation-delay: -1.1s;
+  top: 52px;
+  left: 62px;
+}
+@keyframes lds-default {
+  0%, 20%, 80%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.loadingImage {
+  display: flex;
+  width: 180px;
+  width: 180px;
+  border: 1px solid rgba(94, 91, 91, 0.514);
+  border-radius: 5px;
+  border-width: 2px;
+  padding: 50px;
+}
+
+.assetNumDropdown {
+  width: 50px;
+  left: 10px;
+  /* right:20px; */
+
+}
+
+.nodeButton {
+  background-color: transparent !important;
+  color: #002a40 !important;
+  font-size: 16px !important;
+  height: 50px;
+  width: 250px;
+}
+
+.nodeButton:active {
+  background-color: transparent!important;
+  color: #00a8ff !important;
+}
+
+.nodeButtonActive {
+  background-color: transparent!important;
+  color: #00a8ff !important;
+  font-size: 16px !important;
+  height: 50px;
+  width: 250px;
+}
+
+.nodeButtonActive:active {
+  background-color: transparent !important;
+  color: #002a40 !important;
+}
+
+.nodeButtonSm {
+  background-color: transparent !important;
+  color: #002a40 !important;
+  font-size: 16px !important;
+  height: 50px;
+  width: 180px;
+}
+
+.nodeButtonSm:active {
+  background-color: transparent !important;
+  color: #00a8ff !important;
+}
+
+.nodeButtonSmActive {
+  background-color: transparent!important;
+  color: #00a8ff !important;
+  font-size: 16px !important;
+  height: 50px;
+  width: 180px;
+}
+
+.nodeButtonSmActive:active {
+  background-color: transparent !important;
+  color: #002a40 !important;
+}
+
+.nodeOptions {
+  width: 100px;
+}
+
+.pricingCard {
+  padding: 10px !important;
+}
+
+.beneficiaryAddressCheckbox {
+  display: flex !important;
+  flex-direction: row !important; 
+}
+
+.standardSelected {
+  width: 100px !important;
+  height: 100px !important;
+  position: absolute !important;
+}
+
+.pageButton {
+  background-color: transparent !important;
+  color: black !important;
+  box-shadow: none !important;
+}
+
+.operationButton {
+  color :rgb(0, 0, 0) !important;
+  background-color: #00aaff2a !important;
+  width: fit-content !important;
+}
+
+.delegateButton {
+  background-color: transparent !important;
+  font-weight: 550 !important;
+  font-size: 15px !important;
+  color:#00c3ff !important;
+  border-width: 3px !important;
+  border-style: outset !important;
+  border-color: #00c3ff !important;
+  border-radius: 10px !important;
+}
+.delegateButtonBackCentered {
+  width: 435px !important;
+  height: 50px !important;
+  justify-self: center !important;
+  background-color: #002a40 !important;
+}
+
+.delegateButtonCentered {
+  background-color: transparent !important;
+  font-weight: 550 !important;
+  font-size: 13px !important;
+  color:#00c3ff !important;
+  border-width: 3px !important;
+  border-style: outset !important;
+  border-color: #00c3ff !important;
+  border-radius: 10px !important;
+  margin-left: 45% !important;
+}
+
+.delegateButtonMobile {
+  background-color: transparent !important;
+  font-weight: 550 !important;
+  font-size: 13px !important;
+  color:#00c3ff !important;
+  border-width: 3px !important;
+  border-style: outset !important;
+  border-color: #00c3ff !important;
+  border-radius: 10px !important;
+  width: 100%;
+}
+
+.delegationCard {
+  padding: 10px;
+}
+
+.delegationTitle {
+  font-size: 25px;
+  font-weight: bold !important;
+}
+
+.delegationTitleSm {
+  text-decoration: underline;
+  font-size: 17.5px;
+  font-weight: bold !important;
+}
+
+.delegationPin {
+  width: 12px !important;
+  margin-right: 3px !important;
+  margin-top: 6px !important;
+}
+
+.delegationTips {
+  display: flex;
+  flex-direction: row !important;
+  justify-self: flex-start !important;
+  /* margin-left: 10px !important; */
+}
+
+.delegationTipsContent {
+  font-size: 12px;
+  font-weight: 500 !important;
+}
+
+.delegationInfoSec {
+  display: flex;
+}
+
+.delegationInfo {
+  color: black !important;
+  font-weight: 600;
+  /* text-decoration: underline; */
+  margin-right: 5px !important;
+}
+
+.currencyDignifier {
+  position: absolute;
+  bottom: 115px;
+  right: 20px;
+}
+
+.delegationButtonDelegate {
+  width: 213px;
+  height: 50px !important;
+  background-color: #00a8ff !important;
+}
+
+.delegationButtonBack {
+  width: 213px;
+  height: 50px !important;
+  background-color: #002a40 !important;
+}
+
+.acceptCookies {
+background-color: #02c944;
+padding: 6px !important;
+}
+
+.acceptCookies:hover {
+background-color: #00832c !important;
+}
+
+.declineCookies {
+background-color: grey;
+padding: 6px !important;
+}
+
+.declineCookies:hover {
+background-color: rgb(58, 58, 58) !important;
+}
+
+.moreCookieInfo {
+background-color: transparent;
+text-decoration: underline;
+color: black;
+padding: 0px !important;
+}
+
+.moreCookieInfo:hover {
+background-color: transparent !important;
+text-decoration: underline !important;
+color: rgb(99, 99, 99) !important;
+}
+
+.costsText {
+  font-weight: bold;
+}
+
+.ARweave {
+  max-width: 100px;
+  max-height: 30px;
+}
+
+.ARweave2 {
+  max-width: 200px;
+  max-height: 60px;
+}
+
+.ARweave:hover {
+  cursor: pointer;
+}
+
+.IPFS {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.IPFS:hover {
+  cursor: pointer;
+}
+
+.storageProviderText {
+  font-weight: 400; 
+}
+
+.uploadFile {
+  margin-top: 10px;
+  margin-left: 10px;
+max-width: 80px !important;
+}
+
+.managementType {
+  font-size: 20px !important;
+  background: linear-gradient(to right, #00a8ff 50%, #002a40 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right bottom !important;
+  transition: all .5s ease-out !important;
+ width: 250px;
+ height: 80px;
+ margin-top: 20px !important;
+ margin-left: 5px !important;
+}
+
+.managementType:hover {
+  background-position: left bottom !important;
+}
+
+.managementTypeSelected {
+  font-size: 20px !important;
+  background-color: #00a8ff !important;
+ width: 260px;
+ height: 80px;
+ margin-top: 20px !important;
+ margin-left: 5px !important;
+ transition: opacity.3s ease-in-out !important;
+}
+
+.managementTypeSelector {
+  justify-content: center;
+}
+
+.slide-right {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  /* margin-left: 300px; */
+  /* max-width: 500px */
+}
+
+.slide-right p, h3 {
+  animation: 1s slide-right 0.05s forwards;
+    transform:translateX(-50%);
+}
+
+@keyframes slide-right {
+  to {
+    transform:translateX(0);
+  }
+}
+
+.finalizeNode {
+  padding: 30px !important;
+}
+
+.ARweave3 {
+  max-width: 200px;
+  max-height: 60px;
+}
+
+.IPFS2 {
+  max-width: 90px;
+  max-height: 90px;
+}
+
+.ARweave4 {
+  max-width: 200px;
+  max-height: 60px;
+}
+
+.ARweave4:hover {
+  cursor: pointer;
+}
+
+.IPFS3 {
+  max-width: 90px;
+  max-height: 90px;
+}
+
+.IPFS3:hover {
+  cursor: pointer;
+}
+
+.alertText {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.redeemButton {
+  margin-top: -5px !important;
+  background-color: transparent !important;
+  color: #002a40 !important;
+}
+
+.redeemButton:hover {
+  background-color: white;
+  color: #00a8ff !important;
+}
+
+.alertTextSm {
+  font-size: 12px;
+  margin-left: 5px;
+  font-weight:bold;
+}
+
+.space {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.delegateText {
+  color: black;
+  font-size: 14px;
+  font-weight: 500 !important;
+}
+
+.finalizingTipsContent {
+  color: #ff1500;
+  font-size: 12px;
+  font-weight: 500 !important;
+}
+
+.bottomSpace {
+  margin-top: 15px !important;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.clearButton {
+  background: transparent !important;
+  border: none !important;
+  /* border-radius: 3px; */
+  /* color: black !important; */
+  /* box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(0, 172, 193,.4);
+  padding: 5px; */
+}
+
+.nodeButton2 {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 3px;
+  color: black !important;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.12), 0 7px 10px -5px rgba(0, 172, 193,.3);
+  padding: 5px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    /* font-weight: 300; */
+    line-height: 1.5em;
+}
+
+.nodeButton2:hover {
+  cursor: pointer;
+}
+
+.clearButtonRed {
+  background: transparent !important;
+  border: none !important;
+  color: red;
+}
+
+.jdenticonMoreInfo {
+ box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(0, 172, 193,.4);
+}
+
+.bug{
+  font-size: 40px !important;
+}
+
+.like{
+  height: 35px;
+}
+
+.splitterForm {
+  padding: 20px;
+}
+
+.splitterCheckboxFont {
+  font-size: 15px;
+}
+
+.splitterA {
+  color: black;
+  text-decoration: underline;
+}
+
+.splitterA:hover {
+  color: #00a8ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.splitterA:visited {
+  color: black;
+  cursor: pointer;
+}
+
+.splitterA:visited:hover {
+  color: #00a8ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.splitterLinks {
+  color: black;
+}
+
+.splitterLinks:hover {
+  color: #00a8ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.splitterLinks:visited {
+  color: black;
+  cursor: pointer;
+}
+
+.splitterLinks:visited:hover {
+  color: #00a8ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.top-margin {
+  margin-top: 35px !important;
+}
+
+.left-margin {
+  margin-left: 10px;
+}
