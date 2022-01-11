@@ -7,7 +7,7 @@ import { isMobile } from "react-device-detect";
 
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
-import swal from 'sweetalert'
+import swalReact from "@sweetalert/with-react";
 import Search from '@material-ui/icons/Search'
 import uaDefault from '../../assets/img/default-icon.png'
 import mmDefault from '../../assets/img/mm-icon.png'
@@ -28,6 +28,38 @@ export default function HeaderLinks(props) {
     //   console.log(e.target.value);
     //   setSearchBarVal(e.target.value);
     // };
+
+    const login = () => {
+        swalReact({
+            title: "Connect to Wallet",
+            button: false,
+            content: 
+        <div className="flexColumnWithGap">
+            <div className="flexRowButtonsSwal"
+            onClick={() => {
+                swalReact.close()
+                window.dispatchEvent(props.mmLogin)
+                }
+            }
+            >
+            <img className="swalButtonImage" src={mmDefault}/>
+            Connect With MetaMask
+            </div>
+
+            <div
+            onClick={() => {
+                swalReact.close()
+                window.dispatchEvent(props.udLogin)
+                }
+            }
+            className="flexRowButtonsSwal"
+            >
+            <img className="swalButtonImage" src={uaDefault}/>
+            Login With Unstoppable
+            </div>
+        </div> 
+        })
+    }
 
     const classes = useStyles()
     const { rtlActive } = props
@@ -51,19 +83,32 @@ export default function HeaderLinks(props) {
     return (
         <>
                 <div className={wrapper}>
-                    <div className="flexRowMMButtons"
-                        onClick={() => window.dispatchEvent(props.mmLogin)}
-                    >
-                        <img className="mmButton" src={mmDefault}/>
-                        {props.addr === "" ? <>{connect}</> : <>{`${props.addr.substring(0,4)}...${props.addr.substring(props.addr.length-4, props.addr.length)}`}</>}
-                    </div>
+                    {props.signedInWith === "UD" 
+                    ?  <> 
                     <div
-                        onClick={() => window.dispatchEvent(props.udLogin)}
-                        className="flexRowButtons"
-                    >
-                        <img className="udButton" src={uaDefault}/>
-                        {props.udSub}
-                    </div>
+                    className="flexRowButtons"
+                    onClick={() => login()}
+                >
+                    <img className="udButton" src={uaDefault}/>
+                    {props.udSub}
+                </div> </> : props.signedInWith === "MM" && props.addr !== null
+                ? <>
+                    <div className="flexRowMMButtons"
+                    onClick={() => login()}
+                >
+                    <img className="mmButton" src={mmDefault}/>
+                    {`${props.addr.substring(0,4)}...${props.addr.substring(props.addr.length-4, props.addr.length)}`}
+                </div>
+                </> : <>
+                <Button color="success"
+                    className="connectWallet"
+                    onClick={() => login()}
+                >
+                    Connect Wallet
+                </Button>
+                </>
+                    }
+                    
                 </div>
         </>
     )

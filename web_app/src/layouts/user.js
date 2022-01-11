@@ -122,6 +122,7 @@ export default function Dashboard(props) {
     ["Loading Balances...", "~", "~", "~"],
   ]);
   const [findingTxs, setFindingTxs] = React.useState(false);
+  const [signedInWith, setSignedInWith] = React.useState("");
   const [tokenAddress, setTokenAddress] = React.useState("");
   const [, forceUpdate] = React.useReducer((x) => x + 1, 0);
   const [tierOptions, setTierOptions] = React.useState([[], [], [], []]);
@@ -302,7 +303,8 @@ export default function Dashboard(props) {
   };
 
   const clearPage = () => {
-    setAddr(null);
+    setSignedInWith("")
+    setAddr("");
     setChainId(0);
     setEtherBalance("");
     setPrufBalance("");
@@ -342,6 +344,7 @@ export default function Dashboard(props) {
     _web3 = new Web3(_web3.givenProvider);
 
     setWeb3(_web3);
+    setSignedInWith("UD")
 
     _web3.eth.net.getId().then((chainId) => {
       setUpEnvironment(_web3, _web3.utils.toChecksumAddress(ud.wallet_address), chainId);
@@ -390,6 +393,7 @@ export default function Dashboard(props) {
                       //if(addr.toLowerCase === accounts[0].toLowerCase) return
                       console.log(_web3.utils.toChecksumAddress(accounts[0]));
                       setAddr(_web3.utils.toChecksumAddress(accounts[0]));
+                      setSignedInWith("MM")
                       setUpEnvironment(_web3, accounts[0], chainId);
                     }
                   });
@@ -397,6 +401,7 @@ export default function Dashboard(props) {
                 //if(addr.toLowerCase === accounts[0].toLowerCase) return
                 console.log(_web3.utils.toChecksumAddress(accounts[0]));
                 setAddr(_web3.utils.toChecksumAddress(accounts[0]));
+                setSignedInWith("MM")
                 setUpEnvironment(_web3, accounts[0], chainId);
               }
             });
@@ -1904,6 +1909,7 @@ export default function Dashboard(props) {
   return (
     <div className={userClasses.wrapper}>
       <AdminNavbar
+        signedInWith={signedInWith}
         addr={addr}
         udLogin={udLoginEvent}
         udSub={udSub}

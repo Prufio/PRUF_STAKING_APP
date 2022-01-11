@@ -137,6 +137,34 @@ body {
   max-height: 40px !important;
 }
 
+.flexRowButtonsSwal {
+  border: 1px solid #002a40;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  flex-direction: row;
+  justify-content: center;
+  height: 60px !important;
+}
+
+.swalButtonImage {
+  cursor: pointer;
+  max-height: 50px !important;
+  max-width: 50px !important;
+  padding-right: 7px;
+  padding-top: 7px;
+}
+
+.flexColumnWithGap {
+  display: flex;
+  gap: 15px;
+  font-weight: bold;
+  border-radius: 5px 5px 5px;
+  padding-right: 9px;
+  flex-direction: column;
+}
+
 .flexRowWithGap {
   display: inline-flex;
   gap: 20px;
@@ -650,8 +678,8 @@ body {
   cursor: pointer;
   margin-right: 4px;
   padding-right: 5px;
-  max-height: 37px !important;
-  max-width: 37px !important;
+  max-height: 50px !important;
+  max-width: 50px !important;
 }
 
 .assetImageSelectorButton:Hover {
@@ -1224,6 +1252,17 @@ cursor:pointer;
   width: 100px !important;
   height: 100px !important;
   position: absolute !important;
+}
+
+.connectWallet {
+  background-color: transparent !important;
+  font-weight: 550 !important;
+  font-size: 13px !important;
+  color:#00c3ff !important;
+  border-width: 3px !important;
+  border-style: outset !important;
+  border-color: #00c3ff !important;
+  border-radius: 10px !important;
 }
 
 .pageButton {
