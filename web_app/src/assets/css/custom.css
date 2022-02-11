@@ -125,8 +125,32 @@ body {
   max-height: 40px !important;
 }
 
+.flexRowButtons:hover {
+  background-color: #9947f74b;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px 5px 5px;
+  padding-right: 9px;
+  border: 1px solid #4d47f7b0 !important;
+  flex-direction: row;
+  max-height: 40px !important;
+}
+
 .flexRowMMButtons {
   background-color: #ffffff3f;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px 5px 5px;
+  padding-right: 9px;
+  border: 1px solid #ffffff3f !important;
+  flex-direction: row;
+  max-height: 40px !important;
+}
+
+.flexRowMMButtons:hover {
+  background-color: #faca643f;
   display: inline-block;
   cursor: pointer;
   font-weight: bold;

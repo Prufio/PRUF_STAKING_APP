@@ -125,7 +125,7 @@ export default function Dashboard(props) {
   const [signedInWith, setSignedInWith] = React.useState("");
   const [tokenAddress, setTokenAddress] = React.useState("");
   const [, forceUpdate] = React.useReducer((x) => x + 1, 0);
-  const [tierOptions, setTierOptions] = React.useState([[], [], [], []]);
+  const [tierOptions, setTierOptions] = React.useState([]);
   const [sps, setSps] = React.useState(undefined);
   //const [tierOptions, setTierOptions] = React.useState([]);
   const [chainId, setChainId] = React.useState();
@@ -147,7 +147,8 @@ export default function Dashboard(props) {
   // styles
   const classes = useStyles();
   const userClasses = userStyles();
-  const startAfter = 0;
+  const startAfter = 9;
+  const totalTiers = 1;
   const rewardAssets = {
     units: ["Year", "Month", "Week", "Day"],
     divisors: [1, 12, 52, 365],
@@ -327,12 +328,14 @@ export default function Dashboard(props) {
             symbol: "PRUF", // A ticker symbol or shorthand, up to 5 chars.
             decimals: "18", // The number of decimals in the token
             image:
-              "https://preview.redd.it/2yzbaaqa0f361.png?auto=webp&s=b4dcb15cb4a27dd5262116618f4d6f4b9d723d64", // A string url of the token logo
+              "https://raw.githubusercontent.com/Prufio/PRUF_STAKING_APP/master/web_app/src/assets/img/pruftokenblk.jpg", // A string url of the token logo
           },
         },
       });
     }
   };
+
+
 
   const setUpWithUd = (ud) => {
     let _web3 = require("web3");
@@ -560,8 +563,8 @@ export default function Dashboard(props) {
 
   const getStakeOffers = (_web3, _stake, arr, iteration) => {
     if (!iteration) iteration = 1;
-    if (!arr) arr = [[], [], [], []];
-    if (iteration > 5) return setTierOptions(JSON.parse(JSON.stringify(arr)));
+    if (!arr) arr = [];
+    if (iteration > totalTiers) return setTierOptions(JSON.parse(JSON.stringify(arr)));
     _stake.getStakeLevel(iteration + startAfter).call(async (error, result) => {
       if (!error) {
         console.log(`Stake offer for ID ${iteration + startAfter}: `, result);
@@ -581,10 +584,10 @@ export default function Dashboard(props) {
           tierName: tierNames[iteration],
         };
 
-        arr[0].push(obj);
+        arr.push(obj);
 
         // if(Number(result["2"]) === 14){
-        //   arr[0].push({
+        //   arr.push({
         //     id: iteration + startAfter,
         //     apr: ((Number(result["3"]) * 365) / Number(result["2"]) / 10).toFixed(
         //       2
@@ -1276,7 +1279,7 @@ export default function Dashboard(props) {
       //icon: "warning",
       content: (
         <Card className="delegationCard">
-          <h4 className="delegationTitle">Stake Details</h4>
+          <h4 className="delegationTitle">Start a New Stake</h4>
           {/* <Accordion key={`AccordionStack${index}`}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -1467,6 +1470,65 @@ export default function Dashboard(props) {
       chk4: false,
       chk5: false,
     };
+
+    const singleSelect = () => {
+      console.log(tierOptions)
+      let id=10
+      swalReact({
+        content: (
+          <Card className="delegationCard">
+            <h4 className="delegationTitle">Stake Details</h4>
+            <div className="left-margin">
+              <div className="delegationTips">
+                <FiberManualRecordTwoTone className="delegationPin" />
+                <h5 className="delegationTipsContent">
+                  Lock Duration: {tierOptions[0].interval} Days
+                </h5>
+              </div>
+              <div className="delegationTips">
+                <FiberManualRecordTwoTone className="delegationPin" />
+                <h5 className="delegationTipsContent">
+                  APR: {tierOptions[0].apr}%
+                </h5>
+              </div>
+            </div>
+            <h5 className="delegateText">
+              Input the amount you want to stake:
+            </h5>
+            <CustomInput
+              labelText={`Minimum: ${tierOptions[0].min}`}
+              id="CI1"
+              inputProps={{
+                id: "CI1Input",
+                type: "number",
+                maxLength: "9",
+                onChange: (event) => {
+                  delegateAmount =
+                    Math.round(Number(event.target.value) * 1000000) /
+                    1000000;
+                  console.log(delegateAmount);
+                },
+              }}
+            />
+          </Card>
+        ),
+        buttons: {
+          back: {
+            text: "⬅️ Go Back",
+            value: "back",
+            className: "delegationButtonBack",
+          },
+          confirm: {
+            text: "Stake Tokens 🏛️",
+            value: { id, this: "confirm" },
+            className: "delegationButtonBack",
+          },
+        },
+      }).then((value) => {
+        if (value === "back") return;
+        disclaimerPopup(value);
+      });
+    }
 
     const showDurationOptions = (row) => {
       //@DEV Rebuild to matrix spec
@@ -1699,18 +1761,18 @@ export default function Dashboard(props) {
         swalReact({
           content: (
             <Card className="delegationCard">
-              <h4 className="delegationTitle">Stake Details</h4>
+              <h4 className="delegationTitle">Start a New Stake</h4>
               <div className="left-margin">
                 <div className="delegationTips">
                   <FiberManualRecordTwoTone className="delegationPin" />
                   <h5 className="delegationTipsContent">
-                    Lock Duration: {tierOptions[0][Number(id)].interval} Days
+                    Lock Duration: {tierOptions[0].interval} Days
                   </h5>
                 </div>
                 <div className="delegationTips">
                   <FiberManualRecordTwoTone className="delegationPin" />
                   <h5 className="delegationTipsContent">
-                    APR: {tierOptions[0][Number(id)].apr}%
+                    APR: {tierOptions[0].apr}%
                   </h5>
                 </div>
               </div>
@@ -1718,7 +1780,7 @@ export default function Dashboard(props) {
                 Input the amount you want to stake:
               </h5>
               <CustomInput
-                labelText={`Minimum: ${tierOptions[0][Number(id)].min}`}
+                labelText={`Minimum: ${tierOptions[0].min}`}
                 id="CI1"
                 inputProps={{
                   id: "CI1Input",
@@ -1772,11 +1834,11 @@ export default function Dashboard(props) {
       } else if (value.this === "confirm") {
         let last = value.last;
         let id = value.id;
-        if (delegateAmount < Number(tierOptions[0][Number(id)].min)) {
+        if (delegateAmount < Number(tierOptions[0].min)) {
           return swalReact({
             icon: "warning",
             text: `The minimum value for this staking tier is ${
-              tierOptions[0][Number(id)].min
+              tierOptions[0].min
             }`,
             buttons: {
               back: {
@@ -1809,7 +1871,7 @@ export default function Dashboard(props) {
                   <FiberManualRecordTwoTone className="delegationPin" />
                   <h5 className="delegationTipsContent">
                     Your staked PRUF tokens will be locked until the stake
-                    unlock period ends ({tierOptions[0][Number(id)].interval}{" "}
+                    unlock period ends ({tierOptions[0].interval}{" "}
                     Days). Your stake will continue to earn rewards even after
                     the staking period has ended. No action is required after
                     you stake.
@@ -1819,7 +1881,7 @@ export default function Dashboard(props) {
                   <FiberManualRecordTwoTone className="delegationPin" />
                   <h5 className="delegationTipsContent">
                     Once the stake unlock period (
-                    {tierOptions[0][Number(id)].interval} Days) has concluded,
+                    {tierOptions[0].interval} Days) has concluded,
                     you may break your stake if you wish. This is optional. Once
                     your stake is broken, your PRUF tokens will be refunded.
                     NOTE: IF YOU BREAK YOUR STAKE, THE STAKE ID IS BURNED, AND
@@ -1839,7 +1901,7 @@ export default function Dashboard(props) {
                   <h5 className="delegationTipsContent">
                     {" "}
                     You are about to stake ü{delegateAmount} at an APR of{" "}
-                    {tierOptions[0][Number(id)].apr}%
+                    {tierOptions[0].apr}%
                   </h5>
                 </div>
                 <div className="delegationTips">
@@ -1849,7 +1911,7 @@ export default function Dashboard(props) {
                     Estimated monthly return: ü
                     {Math.floor(
                       delegateAmount *
-                        Number(tierOptions[0][Number(id)].apr / 100 / 12) *
+                        Number(tierOptions[0].apr / 100 / 12) *
                         1000
                     ) / 1000}
                   </h5>
@@ -1875,7 +1937,7 @@ export default function Dashboard(props) {
             let amount = web3.utils.toWei(String(delegateAmount));
             console.log(amount);
             stake
-              .stakeMyTokens(amount, tierOptions[0][Number(id)].id)
+              .stakeMyTokens(amount, tierOptions[0].id)
               .send({ from: addr })
               .on("receipt", () => {
                 document.body.style.cursor = "auto";
@@ -1903,7 +1965,7 @@ export default function Dashboard(props) {
         return;
       }
     };
-    tiersPopup();
+    singleSelect();
   };
 
   return (
