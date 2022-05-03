@@ -958,6 +958,132 @@ export default function Dashboard(props) {
     });
   };
 
+  const transferStake = (index) => {
+    // if (index < 0) return;
+    // let amount = Number(delegationList[index][9]);
+    // console.log(amount);
+        console.log("here1")
+    let toAddress;
+    let isAddress;
+    let id = String(delegationList[Number(index)][0]);
+
+    swalReact({
+      icon: "warning",
+      content: (
+        <Card className="delegationCard">
+        <h5 className="delegateText">
+          Input the address you want to transfer your stake to:
+        </h5>
+        <CustomInput
+          success={isAddress === "success"}
+          error={isAddress === "error"}
+          labelText={`Address`}
+          // id="CI1"
+          inputProps={{
+            // id: "CI1Input",
+            // type: "number",
+            minLength: "64",
+            onChange: (event) => {
+              toAddress = event.target.value.trim()
+              if (web3.utils.isAddress(event.target.value) !== "false") {
+                isAddress = "success";
+              } else {
+                isAddress = "error";
+              }
+            },
+          }}
+        />
+        </Card>
+      ),
+      buttons: {
+        back: {
+          text: "⬅️ Go Back",
+          value: "no",
+          className: "delegationButtonBack",
+        },
+        confirm: {
+          text: "Confirm 👍",
+          value: "next",
+          className: "delegationButtonBack",
+        },
+      },
+    }).then((value) => {
+      if (value === "next") {
+        console.log("here2")
+        return swalReact({
+          icon: "warning",
+          content: (
+            <Card className="delegationCard">
+              <h5 className="delegationTitle">Just a moment...</h5>
+            <h5 className="delegateText">
+              Please confirm that you would like to transfer Stake {id} to {toAddress}
+            </h5>
+              <div className="left-margin">
+                <div className="delegationTips">
+                  <FiberManualRecordTwoTone className="delegationPin" />
+                  <h5 className="delegationTipsContent">
+                    Stake ID: {id}
+                  </h5>
+                </div>
+              </div>
+              <div className="left-margin">
+                <div className="delegationTips">
+                  <FiberManualRecordTwoTone className="delegationPin" />
+                  <h5 className="delegationTipsContent">
+                    To Address: {toAddress}
+                  </h5>
+                </div>
+              </div>
+            </Card>
+          ),
+          buttons: {
+            back: {
+              text: "⬅️ Go Back",
+              value: "back",
+              className: "delegationButtonBack",
+            },
+            confirm: {
+              text: "Confirm 👍",
+              value: "confirm",
+              className: "delegationButtonBack",
+            },
+          },
+        })
+      } else {
+        console.log("here3")
+        return viewStake(index);
+      }
+    }).then((value) => {
+      if (value === "confirm") {
+        console.log("here4")
+        document.body.style.cursor = "progress";
+        console.log(`transfering stake${id} to stake ${toAddress}`);
+        stakeTkn
+          .safeTransferFrom(addr, toAddress, id)
+          .send({ from: addr })
+          .on("receipt", () => {
+            swalReact({
+              icon: "success",
+              text: `Successfully transferred stake ${id} to ${toAddress}!`,
+              buttons: {
+                back: {
+                  text: "Okay",
+                  value: "back",
+                  className: "delegateButtonBackCentered",
+                },
+              },
+            });
+            document.body.style.cursor = "auto";
+            refreshDash();
+            return refreshBalances("both", web3, addr);
+          });
+      } else {
+        console.log("here5")
+        return viewStake(index);
+      }
+    });
+  };
+
   const increaseStake = (index) => {
     if (index < 0) return;
     let amount = 0;
@@ -1393,7 +1519,7 @@ export default function Dashboard(props) {
                 }}
               >
                 {" "}
-                Stake Rewards Balance 💰{" "}
+                Stake Redeemable Rewards 💰{" "}
               </Button>
             ) : (
               <></>
@@ -1401,6 +1527,17 @@ export default function Dashboard(props) {
           ) : (
             <></>
           )}
+
+          {/* {delegationList[index][11] ? ( */}
+              <Button
+                className="MLBGradient"
+                onClick={() => {
+                  return transferStake(index);
+                }}
+              >
+                {" "}
+                Transfer Stake Token ➡️{" "}
+              </Button>
 
           {delegationList[index][11] ? (
             Number(
