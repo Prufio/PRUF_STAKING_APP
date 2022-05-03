@@ -135,12 +135,7 @@ export default function Dashboard(props) {
   const [loadingSums, setLoadingSums] = React.useState(false);
   const [yearlyRewards, setYearlyRewards] = React.useState(0);
   const [rewardsDivisor, setRewardsDivisor] = React.useState(1);
-  const [rewardsUnit, setRewardsUnit] = React.useState("Year");
-  const unitOptions = [
-    "Create a merge commit",
-    "Squash and merge",
-    "Rebase and merge",
-  ];
+  const [rewardsUnit, setRewardsUnit] = React.useState("Year");0
   
   const anchorRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
